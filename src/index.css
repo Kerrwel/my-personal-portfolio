@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Theme - Professional & Clean */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 192 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 192 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 192 100% 45%;
+
+    /* Custom Design Tokens - Light Theme */
+    --neon-cyan: 192 100% 45%;
+    --neon-blue: 220 100% 55%;
+    --neon-purple: 260 100% 60%;
+    --surface: 0 0% 98%;
+    --surface-dark: 210 40% 96%;
+    --surface-light: 0 0% 100%;
+    
+    /* Gradients - Light Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(192 100% 45%), hsl(220 100% 55%));
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 98%), hsl(210 40% 96%));
+    --gradient-text: linear-gradient(135deg, hsl(192 100% 45%), hsl(260 100% 60%));
+    
+    /* Shadows & Glows - Light Theme */
+    --glow-primary: 0 0 20px hsl(192 100% 45% / 0.2), 0 0 40px hsl(192 100% 45% / 0.1);
+    --glow-hover: 0 0 30px hsl(192 100% 45% / 0.3), 0 0 60px hsl(192 100% 45% / 0.15);
+    --shadow-card: 0 8px 32px hsl(222.2 84% 4.9% / 0.08);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Theme - Tech & Modern */
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 192 100% 50%;
+    --primary-foreground: 220 27% 8%;
+
+    --secondary: 240 21% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 21% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 192 100% 50%;
+    --accent-foreground: 220 27% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 21% 20%;
+    --input: 240 21% 15%;
+    --ring: 192 100% 50%;
+
+    /* Custom Design Tokens - Dark Theme */
+    --neon-cyan: 192 100% 50%;
+    --neon-blue: 220 100% 60%;
+    --neon-purple: 260 100% 65%;
+    --surface: 220 20% 12%;
+    --surface-dark: 220 27% 8%;
+    --surface-light: 240 21% 15%;
+    
+    /* Gradients - Dark Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(192 100% 50%), hsl(220 100% 60%));
+    --gradient-surface: linear-gradient(135deg, hsl(220 20% 12%), hsl(240 21% 15%));
+    --gradient-text: linear-gradient(135deg, hsl(192 100% 50%), hsl(260 100% 65%));
+    
+    /* Shadows & Glows - Dark Theme */
+    --glow-primary: 0 0 20px hsl(192 100% 50% / 0.3), 0 0 40px hsl(192 100% 50% / 0.1);
+    --glow-hover: 0 0 30px hsl(192 100% 50% / 0.4), 0 0 60px hsl(192 100% 50% / 0.2);
+    --shadow-card: 0 8px 32px hsl(220 27% 4% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Neon glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-hover:hover {
+    box-shadow: var(--glow-hover);
+    transition: var(--transition-smooth);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Enhanced animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  /* Interactive hover effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-hover);
+  }
+  
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Card animations */
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--glow-hover);
+  }
+  
+  /* Text reveal animation */
+  .text-reveal {
+    overflow: hidden;
+  }
+  
+  .text-reveal span {
+    display: inline-block;
+    animation: textReveal 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  /* Parallax scroll effect */
+  .parallax-slow {
+    transition: transform 0.1s ease-out;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--neon-cyan) / 0.6), 0 0 80px hsl(var(--neon-cyan) / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
