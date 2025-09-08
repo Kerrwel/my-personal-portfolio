@@ -137,7 +137,7 @@ const About = () => {
             {/* Resume Download Button */}
             <div className="text-center mt-8">
               <a
-                href="public/resume/Kerrwel Nor -Resume.pdf"
+                href="/resume/Kerrwel_Nor-Resume.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary text-background rounded-xl shadow-glow-primary hover:scale-105 transition-transform"
               >
